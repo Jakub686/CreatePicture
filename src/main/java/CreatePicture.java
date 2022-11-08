@@ -8,8 +8,8 @@ public class CreatePicture {
         System.out.println("input a size");
         int n = scanner.nextInt();
 
-        int[][] arr = new int[createPicture.size(n)][createPicture.size(n)];
         int m = createPicture.size(n);
+        int[][] arr = new int[createPicture.size(n)][createPicture.size(n)];
 
         createPicture.initializeArray(arr, n);
         createPicture.subtract(arr, n, m);
