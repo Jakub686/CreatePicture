@@ -21,4 +21,34 @@ class CreatePictureTest {
                 () -> assertEquals(7, createPicture.size(4)));
     }
 
+    @Test
+    void initializeArrayTest() {
+        //given
+        int n = 3;
+        int[][] arr = new int[createPicture.size(n)][createPicture.size(n)];
+        int[][] expected = {{3,3,3,3,3},{3,3,3,3,3},{3,3,3,3,3},{3,3,3,3,3},{3,3,3,3,3}};
+        expected[n - 1][n - 1] = 1;
+
+        //when
+        int[][] result = createPicture.initializeArray(arr, n);
+
+        //then
+        Assertions.assertArrayEquals(expected,result);
+    }
+
+    @Test
+    void subtract() {
+        //given
+        int n = 3;
+        int m = createPicture.size(n);
+        int[][] arr = new int[m][m];
+        arr = createPicture.initializeArray(arr, n);
+        int[][] expected = {{3,3,3,3,3},{3,2,2,2,3},{3,2,1,2,3},{3,2,2,2,3},{3,3,3,3,3}};
+
+        //when
+        int[][] result = createPicture.subtract(arr, n,m);
+
+        //then
+        Assertions.assertArrayEquals(expected,result);
+    }
 }

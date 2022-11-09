@@ -9,7 +9,7 @@ public class CreatePicture {
         int n = scanner.nextInt();
 
         int m = createPicture.size(n);
-        int[][] arr = new int[createPicture.size(n)][createPicture.size(n)];
+        int[][] arr = new int[m][m];
 
         createPicture.initializeArray(arr, n);
         createPicture.subtract(arr, n, m);
